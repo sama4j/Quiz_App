@@ -1,13 +1,19 @@
 header {
 	text-align: center;
+	background-image: url("image1.png");
+	color: white;
 }
 
-.response {
-	/*display: none;*/
+#changeling, #next, #teacher, #refresher {
+	display: none;
 }
 
-#answers .response {
-	text-align: center;
+#changeling {
+	background-image: url("image3.png");
+}
+
+#next, #refresher {
+	color: green;
 }
 
 .second, .first {
@@ -39,9 +45,19 @@ header {
 #questions span {
 	display: block;
 	font-weight: bolder;
+	font: 20px "Comic Sans MS", cursive;
+}
+#questions p {
+	color: #08088A;
+	font-size: 1.5em;
 }
 
-fieldset .option {
+legend {
+	color: #0B3861;
+	font-size: 1.2em;
+}
+
+.pick {
 	margin-top: 10px;
 	width: 80%;
 	border: 3px solid #BDBDBD;
@@ -58,4 +74,7 @@ fieldset .option {
 	cursor: pointer;
 	color: blue;
 }
-	;
+
+.response {
+	color: #08088A;
+}

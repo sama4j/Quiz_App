@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Science History Quiz</title>
 	<link rel="stylesheet" type="text/css" href="quiz.css">
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="jquiz.js"></script>
 </head>
 <body>	
 	<header>
@@ -11,34 +13,34 @@
 	</header>
 	<section class="first">
 		<div id="info">
-			<h4>The technological world we experience today is mainly credited to the significant works of notable scientists, innovators and inventors of previous centuries. The following questions provide information about some of those individuals who made a great impact in their time.</h4> <p>Click below to begin this short quiz.</p>
+			<h4>The technological world we experience today is mainly credited to the significant works of notable scientists, innovators and inventors of previous centuries. The following questions provide information about some of those individuals who made a great impact in their time.</h4>
 		</div>
 		<div id="begin">
+		<p>Click below to begin this short quiz.</p>
 			<form>
 				<button>Begin Quiz</button>
 			</form>
 		</div>
 		<div id="changeling">
 			<div id="questions">
-				<div><p><span>Question 1:</span>Before the birth of transistors, this pioneer's diode (electrical one-way streets) made possible the phenomenal advance of radio and television technology</p></div>
+				<div><span></span><p></p></div>
 			</div>
 			<div id="answers">
+			<form id="choices">
 				<fieldset>
 					<legend>Pick the right answer</legend>
-					<button class="option">A) Sir Isaac Newton<div class="response">Wrong</div></button>
-					<button class="option">B) Neils Bohr<div class="response">Wrong</button>
-					<button class="option">C) Sir John Ambrose Fleming<div class="response">Correct</button>
+					<button id="option1" class="pick"></button>
+					<button id="option2" class="pick"></button>
+					<button id="option3" class="pick"></button>
+					<button id="next">Next Question</button>
+					<button id="refresher">Start Quiz Again</button>
 				</fieldset>
+			</form>
 			</div>
 		</div>
 	</section>
 	<section class="second">
-	<!--img style="max-height:60px;max-width:60px;" src="science.png" alt="image here"-->
-		<div id="one"><p>Result</p></div>
-		<div id="two"><p>Result</p></div>
-		<div id="three"><p>Result</p></div>
-		<div id="four"><p>Result</p></div>
-		<div id="five"><p>Result</p></div>
+		<p id="teacher">Good answer</p>
 		<h3 class="response">0/5 correct!</h3>
 	</section>
 </body>
