@@ -1,0 +1,61 @@
+header {
+	text-align: center;
+}
+
+.response {
+	/*display: none;*/
+}
+
+#answers .response {
+	text-align: center;
+}
+
+.second, .first {
+	text-align: center;
+	margin: 10px;
+}
+.second div {
+	display: inline-block;
+	background-color: #FAFAFA;
+	margin: 3px 10px;
+	border-radius: 4px;
+}
+
+.second {
+	vertical-align: text-top;
+}
+
+#info {
+	width: 80%;
+	text-align: center;
+	margin: auto auto;
+}
+
+#questions, #answers {
+	text-align: left;
+	width: 80%;
+	margin: auto auto;
+}
+#questions span {
+	display: block;
+	font-weight: bolder;
+}
+
+fieldset .option {
+	margin-top: 10px;
+	width: 80%;
+	border: 3px solid #BDBDBD;
+	border-radius: 8px;
+	background-color: #F2F2F2;
+	text-align: left;
+}
+#answers button {
+	font-size: 20px;
+	font-weight: lighter;
+}
+
+#answers button:hover {
+	cursor: pointer;
+	color: blue;
+}
+	;
