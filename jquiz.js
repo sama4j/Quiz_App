@@ -5,54 +5,65 @@ $(document).ready(function() {
 	var score = 0;
 	$("#begin").on('click','button',function() {
 		event.preventDefault();
+		var shorty1 = $(this).closest(".first");
+		var shorty2 = shorty1.find("#answers button").first();
 		$(this).closest("#begin").hide();
-		$(this).closest(".first").find("#questions span").text("Question "+ up1);
-		$(this).closest(".first").find("#questions p").text(sentence[ascend]);
-		$(this).closest(".first").find("#answers button").first().text(orders[ascend].optionA);
-		$(this).closest(".first").find("#answers button").first().next().text(orders[ascend].optionB);
-		$(this).closest(".first").find("#answers button").first().next().next().text(orders[ascend].optionC);
-		$(this).closest('.first').find("#changeling").show();
-		/*alert(orders[ascend].num);*/
+		shorty1.find("#questions span").text("Question "+ up1);
+		shorty1.find("#questions p").text(sentence[ascend]);
+		shorty2.text(orders[ascend].optionA);
+		shorty2.next().text(orders[ascend].optionB);
+		shorty2.next().next().text(orders[ascend].optionC);
+		shorty1.find("#changeling").slideDown();
+		
 	});
 
 	$("#choices").on('click',"#option1" ,function() {
 		event.preventDefault();
+		var shorty3 = $(this).closest(".first").parent().find("#teacher");
+		var shorty4 = $(this).closest(".first").parent().find(".response");
 		if (orders[ascend].num == 1) {
-			$(this).closest(".first").parent().find("#teacher").text(state1);
+			shorty3.text(state1);
 			score++;
-			$(this).closest(".first").parent().find(".response").text(score + "/5 correct!");
+			shorty4.text(score + "/5 correct!");
 		}
 		else {
-			$(this).closest(".first").parent().find("#teacher").text(state2);
+			shorty3.text(state2);
 		}
-		$(this).closest(".first").parent().find("#teacher").show();
+		shorty3.show();
 		$(this).closest("#answers").find("#next").show();
+		$(this).closest("#answers").find(".pick").attr("disabled",true);
 	});
 	$("#choices").on('click',"#option2" ,function() {
 		event.preventDefault();
+		var shorty3 = $(this).closest(".first").parent().find("#teacher");
+		var shorty4 = $(this).closest(".first").parent().find(".response");
 		if (orders[ascend].num == 2) {
-			$(this).closest(".first").parent().find("#teacher").text(state1);
+			shorty3.text(state1);
 			score++;
-			$(this).closest(".first").parent().find(".response").text(score + "/5 correct!");
+			shorty4.text(score + "/5 correct!");
 		}
 		else {
-			$(this).closest(".first").parent().find("#teacher").text(state2);
+			shorty3.text(state2);
 		}
-		$(this).closest(".first").parent().find("#teacher").show();
+		shorty3.show();
 		$(this).closest("#answers").find("#next").show();
+		$(this).closest("#answers").find(".pick").attr("disabled",true);
 	});
 	$("#choices").on('click',"#option3" ,function() {
 		event.preventDefault();
+		var shorty3 = $(this).closest(".first").parent().find("#teacher");
+		var shorty4 = $(this).closest(".first").parent().find(".response");
 		if (orders[ascend].num == 3) {
-			$(this).closest(".first").parent().find("#teacher").text(state1);
+			shorty3.text(state1);
 			score++;
-			$(this).closest(".first").parent().find(".response").text(score + "/5 correct!");
+			shorty4.text(score + "/5 correct!");
 		}
 		else {
-			$(this).closest(".first").parent().find("#teacher").text(state2);
+			shorty3.text(state2);
 		}
-		$(this).closest(".first").parent().find("#teacher").show();
+		shorty3.show();
 		$(this).closest("#answers").find("#next").show();
+		$(this).closest("#answers").find(".pick").attr("disabled",true);
 	});
 	
 
@@ -60,13 +71,16 @@ $(document).ready(function() {
 		event.preventDefault();
 		ascend++;
 		up1++;
+		var shorty5 = $(this).closest("#changeling");
+		var shorty6 = $(this).closest("#changeling").find(" #answers button").first();
+		$(this).closest("#answers").find(".pick").attr("disabled",false);
 		if (up1 <= 5) {
-			$(this).closest("#changeling").find(".response").hide();
-			$(this).closest("#changeling").find(" #questions span").text("Question "+ up1);
-			$(this).closest("#changeling").find(" #questions p").text(sentence[ascend]);
-			$(this).closest("#changeling").find(" #answers button").first().text(orders[ascend].optionA);
-			$(this).closest("#changeling").find(" #answers button").first().next().text(orders[ascend].optionB);
-			$(this).closest("#changeling").find(" #answers button").first().next().next().text(orders[ascend].optionC);
+			shorty5.find(".response").hide();
+			shorty5.find(" #questions span").text("Question "+ up1);
+			shorty5.find(" #questions p").text(sentence[ascend]);
+			shorty6.text(orders[ascend].optionA);
+			shorty6.next().text(orders[ascend].optionB);
+			shorty6.next().next().text(orders[ascend].optionC);
 			$(this).closest(".first").parent().find("#teacher").hide();
 			$(this).hide();
 		}
@@ -77,9 +91,10 @@ $(document).ready(function() {
 	});
 
 	$("#refresher").on('click',function() {
-		$(this).closest('.first').find("#begin").show();
+		
 		$(this).closest('.first').find("#changeling").hide();
 		$(this).hide();
+		$(this).closest('.first').find("#begin").show();
 
 	});
 

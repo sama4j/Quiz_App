@@ -16,6 +16,10 @@ header {
 	color: green;
 }
 
+#refresher {
+	background-color: yellow;
+}
+
 .second, .first {
 	text-align: center;
 	margin: 10px;
@@ -50,6 +54,10 @@ header {
 #questions p {
 	color: #08088A;
 	font-size: 1.5em;
+	font-weight: lighter;
+	background-color: #ECF8E0;
+	border: 1px solid #ECF8E0;
+	border-radius: 8px;
 }
 
 legend {
